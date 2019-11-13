@@ -10,13 +10,16 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: 'css-loader'
+        use: ['style-loader', 'css-loader']
       },
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: ['file-loader']
+      // },
       {
-        test: /\.(svg|png|jpg|jpeg|gif)$/,
+        test: /\.(jpg|png)$/,
         use: {
-          loader: 'file-loader',
-          options: {}
+          loader: 'url-loader'
         }
       }
     ]
